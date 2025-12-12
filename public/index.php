@@ -24,8 +24,7 @@ switch ($page) {
         $userController->logout();
         break;
         
-    // CORRECTION 2 : On ajoute 'home' car ton PostController redirige vers 'page=home'
-    case 'home': 
+    case 'home':
     case 'index':
         $postController->index();
         break;
@@ -39,6 +38,19 @@ switch ($page) {
 
     case 'ajax_comment':
         $commentController->add();
+        break;
+    case 'ajax_update_comment':
+        $commentController->update();
+        break;
+
+    case 'ajax_like':
+        $postController->ajaxLike();
+        break;
+    case 'ajax_search':
+        $postController->ajaxSearch();
+        break;
+    case 'ajax_notifications':
+        $postController->ajaxNotifications();
         break;
 
     default:

@@ -9,7 +9,8 @@
 <body class="container mt-5">
     <h2>Connexion</h2>
     <?php if(isset($error)) echo "<div class='alert alert-danger'>$error</div>"; ?>
-    <form method="post" action="?action=login">
+    
+    <form method="post" action="?page=login">
         <div class="mb-3">
             <label>Email</label>
             <input type="email" name="email" class="form-control" required>
@@ -19,7 +20,7 @@
             <input type="password" name="password" class="form-control" required>
         </div>
         <button type="submit" class="btn btn-primary">Se connecter</button>
-        <a href="?action=register" class="btn btn-link">S'inscrire</a>
+        <a href="?page=register" class="btn btn-link">S'inscrire</a>
     </form>
 </body>
 </html>

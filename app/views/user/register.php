@@ -8,7 +8,8 @@
 </head>
 <body class="container mt-5">
     <h2>Inscription</h2>
-    <form method="post" action="?action=register">
+    
+    <form method="post" action="?page=register">
         <div class="mb-3">
             <label>Nom</label>
             <input type="text" name="nom" class="form-control" required>
@@ -22,7 +23,7 @@
             <input type="password" name="password" class="form-control" required>
         </div>
         <button type="submit" class="btn btn-primary">S'inscrire</button>
-        <a href="?action=login" class="btn btn-link">Connexion</a>
+        <a href="?page=login" class="btn btn-link">Connexion</a>
     </form>
 </body>
 </html>

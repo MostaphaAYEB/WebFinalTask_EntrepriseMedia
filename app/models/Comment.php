@@ -26,10 +26,14 @@ class Comment {
         $stmt->execute(['contenu' => $contenu, 'uid' => $userId, 'pid' => $postId]);
         
         $id = $this->pdo->lastInsertId();
-        // Récupération pour AJAX
         $sql = "SELECT comments.*, users.nom as auteur_nom FROM comments JOIN users ON comments.utilisateur_id = users.id WHERE comments.id = :id";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute(['id' => $id]);
         return $stmt->fetch();
+    }
+
+    public function updateComment($id, $contenu, $userId) {
+        $stmt = $this->pdo->prepare("UPDATE comments SET contenu = :contenu WHERE id = :id AND utilisateur_id = :uid");
+        return $stmt->execute(['contenu' => $contenu, 'id' => $id, 'uid' => $userId]);
     }
 }
