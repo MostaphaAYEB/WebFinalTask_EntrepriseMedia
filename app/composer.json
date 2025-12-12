@@ -1,6 +1,5 @@
 {
-    "name": "projet/webfinaltask",
-    "description": "Configuration autoload pour le projet Entreprise",
+    "name": "app/webfinaltask",
     "autoload": {
         "psr-4": {
             "App\\": "app/",
