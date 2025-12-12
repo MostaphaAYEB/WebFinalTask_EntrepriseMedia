@@ -1,0 +1,11 @@
+{
+    "name": "projet/webfinaltask",
+    "description": "Configuration autoload pour le projet Entreprise",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "App\\Controllers\\": "app/controllers/",
+            "App\\Models\\": "app/models/"
+        }
+    }
+}
