@@ -11,9 +11,9 @@ $userController = new UserController();
 $postController = new PostController();
 $commentController = new CommentController();
 
-$action = $_GET['action'] ?? 'index';
+$page = $_GET['page'] ?? 'index';
 
-switch ($action) {
+switch ($page) {
     case 'login':
         $userController->login();
         break;
@@ -24,9 +24,12 @@ switch ($action) {
         $userController->logout();
         break;
         
+    // CORRECTION 2 : On ajoute 'home' car ton PostController redirige vers 'page=home'
+    case 'home': 
     case 'index':
         $postController->index();
         break;
+
     case 'create_post':
         $postController->create();
         break;
@@ -39,10 +42,10 @@ switch ($action) {
         break;
 
     default:
-        if (isset($_SESSION['user_id'])) {
-            header('Location: ?action=index');
+        if (isset($_SESSION['user'])) {
+            header('Location: ?page=index');
         } else {
-            header('Location: ?action=login');
+            header('Location: ?page=login');
         }
         break;
 }
